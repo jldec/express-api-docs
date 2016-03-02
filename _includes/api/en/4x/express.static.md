@@ -15,17 +15,17 @@ to move on to the next middleware, allowing for stacking and fall-backs.
 
 The following table describes the properties of the `options` object.
 
-| Property      | Description                                                           |   Type      | Default         |
-|---------------|-----------------------------------------------------------------------|-------------|-----------------|
-| `dotfiles`    | Determines how dotfiles (files or directories that begin with a dot ".") are treated.  <br/><br/>See [dotfiles](#dotfiles) below. | String | "ignore"|
-| `etag`        | Enable or disable etag generation  | Boolean | `true` |
-| `extensions`  | Sets file extension fallbacks: If a file is not found, search for files with the specified extensions and serve the first one found. Example: `['html', 'htm']`.| Boolean | `false` |
-| `fallthrough`  | Let client errors fall-through as unhandled requests, otherwise forward a client error. <br/><br/>See [fallthrough](#fallthrough) below.| Boolean | `true` |
-| `index`       | Sends the specified directory index file. Set to `false` to disable directory indexing. | Mixed | "index.html" |
-| `lastModified` | Set the `Last-Modified` header to the last modified date of the file on the OS. | Boolean | `true` |
-| `maxAge`      | Set the max-age property of the Cache-Control header in milliseconds or a string in [ms format](https://www.npmjs.org/package/ms). | Number | 0 |
-| `redirect`    | Redirect to trailing "/" when the pathname is a directory. | Boolean | `true` |
-| `setHeaders`  | Function for setting HTTP headers to serve with the file. <br/><br/>See [setHeaders](#setHeaders) below. | Function |  |
+| Property       | Description                                                                                                                                                      | Type     | Default      |
+|:---------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:-------------|
+| `dotfiles`     | Determines how dotfiles (files or directories that begin with a dot ".") are treated.  <br/><br/>See [dotfiles](#dotfiles) below.                                | String   | "ignore"     |
+| `etag`         | Enable or disable etag generation                                                                                                                                | Boolean  | `true`       |
+| `extensions`   | Sets file extension fallbacks: If a file is not found, search for files with the specified extensions and serve the first one found. Example: `['html', 'htm']`. | Boolean  | `false`      |
+| `fallthrough`  | Let client errors fall-through as unhandled requests, otherwise forward a client error. <br/><br/>See [fallthrough](#fallthrough) below.                         | Boolean  | `true`       |
+| `index`        | Sends the specified directory index file. Set to `false` to disable directory indexing.                                                                          | Mixed    | "index.html" |
+| `lastModified` | Set the `Last-Modified` header to the last modified date of the file on the OS.                                                                                  | Boolean  | `true`       |
+| `maxAge`       | Set the max-age property of the Cache-Control header in milliseconds or a string in [ms format](https://www.npmjs.org/package/ms).                               | Number   | 0            |
+| `redirect`     | Redirect to trailing "/" when the pathname is a directory.                                                                                                       | Boolean  | `true`       |
+| `setHeaders`   | Function for setting HTTP headers to serve with the file. <br/><br/>See [setHeaders](#setHeaders) below.                                                         | Function |              |
 
 For more information, see [Serving static files in Express](/starter/static-files.html).
 
@@ -58,9 +58,9 @@ For this option, specify a function to set custom response headers. Alterations 
 
 The signature of the function is:
 
-{% highlight js %}
+```js
 fn(res, path, stat)
-{% endhighlight %}
+```
 
 Arguments:
 
